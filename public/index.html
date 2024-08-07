@@ -38,7 +38,8 @@
             if (event.key === 'Enter' || event.type === 'click') {
                 const url = document.getElementById('url').value;
                 if (url) {
-                    const proxyUrl = 'proxy.php?url=' + encodeURIComponent(url);
+                    // Ensure the URL is correctly formatted and encoded
+                    const proxyUrl = '/api/proxy?url=' + encodeURIComponent(url);
                     document.getElementById('proxyFrame').src = proxyUrl;
                 }
             }
